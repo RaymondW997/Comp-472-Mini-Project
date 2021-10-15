@@ -56,8 +56,6 @@ plt.savefig("drug-distribution.pdf")
 
 #Using pandas.get_dummies to convert the ordinal and nomnal features in numerical format
 df = pd.get_dummies(df, columns=['Sex', 'BP', 'Cholesterol'])
-#print(df.head())
-
 
 #Takes all of the data from the Drug column
 y = df.Drug
@@ -81,7 +79,6 @@ classifierNB.fit(x_train, y_train)
 predictionNB = classifierNB.predict(x_test)
 print("Naive Bayes Prediction Results: ")
 print(predictionNB)
-
 
 #b) using Decision Tree classifier to predict the split dataset
 #   and will print out the predicted outcome of the Base-DT
@@ -107,7 +104,6 @@ predictionTop_DT = classifierTop_DT.predict(x_test)
 print("Top-DT Results: ")
 print(predictionTop_DT)
 
-
 #d) Using Perceptron classifier to predict the split dataset
 #   and will print out the predicted outcome of the perceptron
 #   classifier
@@ -118,7 +114,6 @@ predictionPercep = classifierPercep.predict(x_test)
 print("Perceptron Prediction Results: ")
 print(predictionPercep)
 
-
 #e) Using Base-MLP classifier to predict the split dataset
 #   and will print out the predicted outcome of the Base-MLP
 #   classifier
@@ -128,7 +123,6 @@ classifierBase_MLP.fit(x_train, y_train)
 predictionBase_MLP = classifierBase_MLP.predict(x_test)
 print("MLP Prediction Results: ")
 print(predictionBase_MLP)
-
 
 #f) Using Top-MLP classifier to predict the split dataset
 #   and will print out the predicted outcome of the Top-MLP
