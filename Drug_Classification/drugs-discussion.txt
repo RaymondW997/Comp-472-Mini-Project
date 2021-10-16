@@ -1,0 +1,9 @@
+    According to the findings in step 8 of task 2, the following models did not present any variation between subsequent
+runs upon the same training data: NB, Base-DT, Top-DT, and Perceptron. In turn, both Base-MLP and Top-MLP were classifiers
+that provided different outcomes even while repeating runs on the same training and test data. This is because the latter
+two classifiers operated under stochastic gradient descent as solving algorithms, as per requested in the handout.
+
+    In the stochastic gradient descent algorithm, a random data point is selected from the training data set at every
+iteration, instead of going down the list progressively. It is also known to initialize weights for models at a random
+value when it starts its run. In general, stochastic algorithms employ slight randomness into its decision-making, as
+opposed to deterministic algorithms that follow each step in order.
