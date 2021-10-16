@@ -1,0 +1,67 @@
+===========================
+===========MultinomialNB default values, try 1============
+===========================
+===========================
+Training a classifier
+===========================
+Evaluation of the performance on the test set
+0.946067415730337
+===========================
+(b) the confusion matrix
+[[102   0   2   0   2]
+ [  5  61   5   1   1]
+ [  1   0  71   0   1]
+ [  0   0   0  95   0]
+ [  0   0   1   5  92]]
+===========================
+(c) the precision, recall, and F1-measure for each class
+              precision    recall  f1-score   support
+
+           0       0.94      0.96      0.95       106
+           1       1.00      0.84      0.91        73
+           2       0.90      0.97      0.93        73
+           3       0.94      1.00      0.97        95
+           4       0.96      0.94      0.95        98
+
+    accuracy                           0.95       445
+   macro avg       0.95      0.94      0.94       445
+weighted avg       0.95      0.95      0.95       445
+
+===========================
+(d) the accuracy, macro-average F1 and weighted-average F1 of the model
+Accuracy is :0.946067415730337
+Macro avg is :0.9431541357793332
+Weighted avg is :0.9454990433777993
+===========================
+(e) the prior probability of each class
+[0 1 2 3 4]
+[-1.48295377 -1.73816545 -1.64372699 -1.45368338 -1.77063584]
+===========================
+(f) the size of the vocabulary (i.e. the number of different words)
+29421
+===========================
+(g) the number of word-tokens in each class (i.e. the number of words in total)
+The number of word-tokens in business:164663
+The number of word-tokens in entertainment:124893
+The number of word-tokens in politics:185208
+The number of word-tokens in sport:162953
+The number of word-tokens in tech:198640
+===========================
+(h) the number of word-tokens in the entire corpus
+836357
+============================
+(i) the number and percentage of words with a frequency of zero in each class
+the number words with a frequency of zero in class business: 17538
+the percentage of words with a frequency of zero in class business: 0.5961048230855511
+the number words with a frequency of zero in class entertainment: 17746
+the percentage of words with a frequency of zero in class entertainment: 0.6031746031746031
+the number words with a frequency of zero in class politics: 18201
+the percentage of words with a frequency of zero in class politics: 0.6186397471194045
+the number words with a frequency of zero in class sport: 18850
+the percentage of words with a frequency of zero in class sport: 0.6406988205703409
+the number words with a frequency of zero in class tech: 17323
+the percentage of words with a frequency of zero in class tech: 0.5887971177050406
+===========================
+(j) the number and percentage of words with a frequency of one in the entire corpus
+The number of words with a frequency of 1 in entire corpus: 10005
+The percentage: 0.01196259492059013
