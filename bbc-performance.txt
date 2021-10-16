@@ -1,41 +1,172 @@
 ===========================
 ===========MultinomialNB default values, try 1============
 ===========================
-===========================
 Training a classifier
 ===========================
 Evaluation of the performance on the test set
-0.946067415730337
+0.9325842696629213
 ===========================
 (b) the confusion matrix
-[[102   0   2   0   2]
- [  5  61   5   1   1]
- [  1   0  71   0   1]
- [  0   0   0  95   0]
- [  0   0   1   5  92]]
+[[110   0   3   0   1]
+ [  0  59   8  10   4]
+ [  1   0  81   0   0]
+ [  0   0   0  94   0]
+ [  0   1   2   0  71]]
 ===========================
 (c) the precision, recall, and F1-measure for each class
               precision    recall  f1-score   support
 
-           0       0.94      0.96      0.95       106
-           1       1.00      0.84      0.91        73
-           2       0.90      0.97      0.93        73
-           3       0.94      1.00      0.97        95
-           4       0.96      0.94      0.95        98
+           0       0.99      0.96      0.98       114
+           1       0.98      0.73      0.84        81
+           2       0.86      0.99      0.92        82
+           3       0.90      1.00      0.95        94
+           4       0.93      0.96      0.95        74
 
-    accuracy                           0.95       445
-   macro avg       0.95      0.94      0.94       445
-weighted avg       0.95      0.95      0.95       445
+    accuracy                           0.93       445
+   macro avg       0.93      0.93      0.93       445
+weighted avg       0.94      0.93      0.93       445
 
 ===========================
 (d) the accuracy, macro-average F1 and weighted-average F1 of the model
-Accuracy is :0.946067415730337
-Macro avg is :0.9431541357793332
-Weighted avg is :0.9454990433777993
+Accuracy is :0.9325842696629213
+Macro avg is :0.9262546744036106
+Weighted avg is :0.9304202966794408
 ===========================
 (e) the prior probability of each class
 [0 1 2 3 4]
-[-1.48295377 -1.73816545 -1.64372699 -1.45368338 -1.77063584]
+[-1.50295443 -1.76405687 -1.67023811 -1.45128242 -1.69440847]
+===========================
+(f) the size of the vocabulary (i.e. the number of different words)
+29421
+===========================
+(g) the number of word-tokens in each class (i.e. the number of words in total)
+The number of word-tokens in business:164663
+The number of word-tokens in entertainment:124893
+The number of word-tokens in politics:185208
+The number of word-tokens in sport:162953
+The number of word-tokens in tech:198640
+===========================
+(h) the number of word-tokens in the entire corpus
+836357
+============================
+(i) the number and percentage of words with a frequency of zero in each class
+the number words with a frequency of zero in class business: 17538
+the percentage of words with a frequency of zero in class business: 0.5961048230855511
+the number words with a frequency of zero in class entertainment: 17746
+the percentage of words with a frequency of zero in class entertainment: 0.6031746031746031
+the number words with a frequency of zero in class politics: 18201
+the percentage of words with a frequency of zero in class politics: 0.6186397471194045
+the number words with a frequency of zero in class sport: 18850
+the percentage of words with a frequency of zero in class sport: 0.6406988205703409
+the number words with a frequency of zero in class tech: 17323
+the percentage of words with a frequency of zero in class tech: 0.5887971177050406
+===========================
+(j) the number and percentage of words with a frequency of one in the entire corpus
+The number of words with a frequency of 1 in entire corpus: 10005
+The percentage: 0.01196259492059013
+===========================
+===========MultinomialNB default values, try 2============
+===========================
+Training a classifier
+===========================
+Evaluation of the performance on the test set
+0.9370786516853933
+===========================
+(b) the confusion matrix
+[[110   0   3   0   1]
+ [  0  61   8   8   4]
+ [  1   0  81   0   0]
+ [  0   0   0  94   0]
+ [  0   1   2   0  71]]
+===========================
+(c) the precision, recall, and F1-measure for each class
+              precision    recall  f1-score   support
+
+           0       0.99      0.96      0.98       114
+           1       0.98      0.75      0.85        81
+           2       0.86      0.99      0.92        82
+           3       0.92      1.00      0.96        94
+           4       0.93      0.96      0.95        74
+
+    accuracy                           0.94       445
+   macro avg       0.94      0.93      0.93       445
+weighted avg       0.94      0.94      0.94       445
+
+===========================
+(d) the accuracy, macro-average F1 and weighted-average F1 of the model
+Accuracy is :0.9370786516853933
+Macro avg is :0.9314459033030461
+Weighted avg is :0.9354279396366074
+===========================
+(e) the prior probability of each class
+[0 1 2 3 4]
+[-1.50295443 -1.76405687 -1.67023811 -1.45128242 -1.69440847]
+===========================
+(f) the size of the vocabulary (i.e. the number of different words)
+29421
+===========================
+(g) the number of word-tokens in each class (i.e. the number of words in total)
+The number of word-tokens in business:164663
+The number of word-tokens in entertainment:124893
+The number of word-tokens in politics:185208
+The number of word-tokens in sport:162953
+The number of word-tokens in tech:198640
+===========================
+(h) the number of word-tokens in the entire corpus
+836357
+============================
+(i) the number and percentage of words with a frequency of zero in each class
+the number words with a frequency of zero in class business: 17538
+the percentage of words with a frequency of zero in class business: 0.5961048230855511
+the number words with a frequency of zero in class entertainment: 17746
+the percentage of words with a frequency of zero in class entertainment: 0.6031746031746031
+the number words with a frequency of zero in class politics: 18201
+the percentage of words with a frequency of zero in class politics: 0.6186397471194045
+the number words with a frequency of zero in class sport: 18850
+the percentage of words with a frequency of zero in class sport: 0.6406988205703409
+the number words with a frequency of zero in class tech: 17323
+the percentage of words with a frequency of zero in class tech: 0.5887971177050406
+===========================
+(j) the number and percentage of words with a frequency of one in the entire corpus
+The number of words with a frequency of 1 in entire corpus: 10005
+The percentage: 0.01196259492059013
+===========================
+===========MultinomialNB default values, try 2============
+===========================
+Training a classifier
+===========================
+Evaluation of the performance on the test set
+0.9640449438202248
+===========================
+(b) the confusion matrix
+[[107   1   4   0   2]
+ [  0  74   3   0   4]
+ [  1   0  81   0   0]
+ [  0   0   0  94   0]
+ [  0   1   0   0  73]]
+===========================
+(c) the precision, recall, and F1-measure for each class
+              precision    recall  f1-score   support
+
+           0       0.99      0.94      0.96       114
+           1       0.97      0.91      0.94        81
+           2       0.92      0.99      0.95        82
+           3       1.00      1.00      1.00        94
+           4       0.92      0.99      0.95        74
+
+    accuracy                           0.96       445
+   macro avg       0.96      0.97      0.96       445
+weighted avg       0.97      0.96      0.96       445
+
+===========================
+(d) the accuracy, macro-average F1 and weighted-average F1 of the model
+Accuracy is :0.9640449438202248
+Macro avg is :0.9627657331366585
+Weighted avg is :0.9640542367315429
+===========================
+(e) the prior probability of each class
+[0 1 2 3 4]
+[-1.50295443 -1.76405687 -1.67023811 -1.45128242 -1.69440847]
 ===========================
 (f) the size of the vocabulary (i.e. the number of different words)
 29421
