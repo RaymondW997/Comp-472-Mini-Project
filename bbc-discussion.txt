@@ -1,0 +1,5 @@
+a) Precision metric would be best suited for this dataset because of how accurate the data 
+is represented. Since the dataset is mostly evenly distributed, the F1 measure wouldn't be too impactful. 
+
+
+b) The performance of steps (8-10) is better than those of step 7 because by changing the smoothing values, it reduces the noise inputs and gives a more accurate representation of the dataset. By comparing the smoothing value of 0.9 and 0.0001, we can see that the smoothing of 0.0001 runs better because it returns a better precision, recall and F1-score.
