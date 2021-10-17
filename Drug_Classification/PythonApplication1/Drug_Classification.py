@@ -33,7 +33,7 @@ if __name__ == '__main__':
     df = load_data()
 
     # opening file to write output to
-    outputFile = open("../drugs-performace.txt", 'w')
+    outputFile = open("../drugs-performance.txt", 'w')
 
     # storing the drug column into the variable drugCol
     drugCol = df.iloc[:, -1:].values
