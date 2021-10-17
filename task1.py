@@ -1,3 +1,4 @@
+import pandas
 import sklearn.datasets
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -135,7 +136,36 @@ def print_hi():
     print("The number of words with a frequency of 1 in entire corpus: " + str(count), file=output_log)
     print("The percentage: " + str(count / cat_sum), file=output_log)
 
-    # MultinomialNB 3
+    print("===========================", file=output_log)
+    print("(k) your 2 favorite words (that are present in the vocabulary) and their log-prob", file=output_log)
+    count = 0
+    separate_cat_vec = CountVectorizer()
+    separate_cat_vec.fit(x_train)
+    vocabulary = separate_cat_vec.get_feature_names()
+    print("Word 1: machine\n", file=output_log)
+    machineIndex = vocabulary.index('machine')
+    business = nb.feature_log_prob_[0][machineIndex]
+    entertainment = nb.feature_log_prob_[1][machineIndex]
+    politics = nb.feature_log_prob_[2][machineIndex]
+    sport = nb.feature_log_prob_[3][machineIndex]
+    tech = nb.feature_log_prob_[4][machineIndex]
+    machineTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                             columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(machineTable, file=output_log)
+    print("\n", file=output_log)
+    print("Word 2: learn\n", file=output_log)
+    learnIndex = vocabulary.index('learn')
+    business = nb.feature_log_prob_[0][learnIndex]
+    entertainment = nb.feature_log_prob_[1][learnIndex]
+    politics = nb.feature_log_prob_[2][learnIndex]
+    sport = nb.feature_log_prob_[3][learnIndex]
+    tech = nb.feature_log_prob_[4][learnIndex]
+    learnTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                                    columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(learnTable, file=output_log)
+    print("\n", file=output_log)
+
+    # MultinomialNB try 2, no changes to anything
     print("===========================", file=output_log)
     print("===========MultinomialNB default values, try 2============", file=output_log)
     print("===========================")
@@ -145,7 +175,7 @@ def print_hi():
     text_clf = Pipeline([
         ('vect', CountVectorizer()),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultinomialNB(alpha=0.9)),
+        ('clf', MultinomialNB(alpha=1)),
     ])
 
     print("===========================", file=output_log)
@@ -236,9 +266,38 @@ def print_hi():
     print("The number of words with a frequency of 1 in entire corpus: " + str(count), file=output_log)
     print("The percentage: " + str(count / cat_sum), file=output_log)
 
-    # MultinomialNB 2
     print("===========================", file=output_log)
-    print("===========MultinomialNB default values, try 2============", file=output_log)
+    print("(k) your 2 favorite words (that are present in the vocabulary) and their log-prob", file=output_log)
+    count = 0
+    separate_cat_vec = CountVectorizer()
+    separate_cat_vec.fit(x_train)
+    vocabulary = separate_cat_vec.get_feature_names()
+    print("Word 1: machine\n", file=output_log)
+    machineIndex = vocabulary.index('machine')
+    business = nb.feature_log_prob_[0][machineIndex]
+    entertainment = nb.feature_log_prob_[1][machineIndex]
+    politics = nb.feature_log_prob_[2][machineIndex]
+    sport = nb.feature_log_prob_[3][machineIndex]
+    tech = nb.feature_log_prob_[4][machineIndex]
+    machineTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                             columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(machineTable, file=output_log)
+    print("\n", file=output_log)
+    print("Word 2: learn\n", file=output_log)
+    learnIndex = vocabulary.index('learn')
+    business = nb.feature_log_prob_[0][learnIndex]
+    entertainment = nb.feature_log_prob_[1][learnIndex]
+    politics = nb.feature_log_prob_[2][learnIndex]
+    sport = nb.feature_log_prob_[3][learnIndex]
+    tech = nb.feature_log_prob_[4][learnIndex]
+    learnTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                                    columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(learnTable, file=output_log)
+    print("\n", file=output_log)
+
+    # MultinomialNB 3, smoothing value is 0.0001
+    print("===========================", file=output_log)
+    print("===========MultinomialNB smoothing value 0.0001============", file=output_log)
     print("===========================")
     # Q4 Preprocess the data, tokenize the corpus
     print("Q4 Building pipeline. Preprocess the data, tokenize the corpus")
@@ -281,7 +340,7 @@ def print_hi():
 
     print("===========================", file=output_log)
     print("(e) the prior probability of each class", file=output_log)
-    nb = MultinomialNB(alpha=1)
+    nb = MultinomialNB(alpha=0.0001)
     separate_cat_vec = CountVectorizer()
     separate_cat_vec.fit(x_train)
     x_train_transformed = separate_cat_vec.transform(x_train)
@@ -336,6 +395,165 @@ def print_hi():
             count = count + 1
     print("The number of words with a frequency of 1 in entire corpus: " + str(count), file=output_log)
     print("The percentage: " + str(count / cat_sum), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(k) your 2 favorite words (that are present in the vocabulary) and their log-prob", file=output_log)
+    count = 0
+    separate_cat_vec = CountVectorizer()
+    separate_cat_vec.fit(x_train)
+    vocabulary = separate_cat_vec.get_feature_names()
+    print("Word 1: machine\n", file=output_log)
+    machineIndex = vocabulary.index('machine')
+    business = nb.feature_log_prob_[0][machineIndex]
+    entertainment = nb.feature_log_prob_[1][machineIndex]
+    politics = nb.feature_log_prob_[2][machineIndex]
+    sport = nb.feature_log_prob_[3][machineIndex]
+    tech = nb.feature_log_prob_[4][machineIndex]
+    machineTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                             columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(machineTable, file=output_log)
+    print("\n", file=output_log)
+    print("Word 2: learn\n", file=output_log)
+    learnIndex = vocabulary.index('learn')
+    business = nb.feature_log_prob_[0][learnIndex]
+    entertainment = nb.feature_log_prob_[1][learnIndex]
+    politics = nb.feature_log_prob_[2][learnIndex]
+    sport = nb.feature_log_prob_[3][learnIndex]
+    tech = nb.feature_log_prob_[4][learnIndex]
+    learnTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                                    columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(learnTable, file=output_log)
+    print("\n", file=output_log)
+
+    # MultinomialNB 4, smoothing value 0.9
+    print("===========================", file=output_log)
+    print("===========MultinomialNB smoothing value 0.9============", file=output_log)
+    print("===========================")
+    # Q4 Preprocess the data, tokenize the corpus
+    print("Q4 Building pipeline. Preprocess the data, tokenize the corpus")
+    from sklearn.pipeline import Pipeline
+    text_clf = Pipeline([
+        ('vect', CountVectorizer()),
+        ('tfidf', TfidfTransformer()),
+        ('clf', MultinomialNB(alpha=0.9)),
+    ])
+
+    print("===========================", file=output_log)
+    print("Training a classifier", file=output_log)
+    text_clf.fit(x_train, y_train)
+
+    print("===========================", file=output_log)
+    print("Evaluation of the performance on the test set", file=output_log)
+
+    predicted = text_clf.predict(x_test)
+    y_probability = np.mean(predicted == y_test)
+    print(y_probability, file=output_log)
+
+    print("===========================", file=output_log)
+    print("(b) the confusion matrix", file=output_log)
+    from sklearn import metrics
+    confusion = metrics.confusion_matrix(y_test, predicted)
+    print(confusion, file=output_log)
+
+    print("===========================", file=output_log)
+    print("(c) the precision, recall, and F1-measure for each class", file=output_log)
+    print(metrics.classification_report(y_test, predicted), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(d) the accuracy, macro-average F1 and weighted-average F1 of the model", file=output_log)
+    acc = metrics.accuracy_score(y_test, predicted)
+    print("Accuracy is :" + str(acc), file=output_log)
+    macro_avg = metrics.f1_score(y_test, predicted, average="macro")
+    print("Macro avg is :" + str(macro_avg), file=output_log)
+    weighted_avg = metrics.f1_score(y_test, predicted, average="weighted")
+    print("Weighted avg is :" + str(weighted_avg), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(e) the prior probability of each class", file=output_log)
+    nb = MultinomialNB(alpha=0.9)
+    separate_cat_vec = CountVectorizer()
+    separate_cat_vec.fit(x_train)
+    x_train_transformed = separate_cat_vec.transform(x_train)
+    nb.fit(x_train_transformed, y_train)
+    print(nb.classes_, file=output_log)
+    print(nb.class_log_prior_, file=output_log)
+
+    print("===========================", file=output_log)
+    print("(f) the size of the vocabulary (i.e. the number of different words)", file=output_log)
+    cat_vec = CountVectorizer()
+    cat_array = cat_vec.fit_transform(bbc.data).toarray()
+    cat_sum = cat_array.sum()
+    size_voc = len(cat_vec.get_feature_names())
+    print(size_voc, file=output_log)
+
+    # g: the number of word-tokens in each class
+    print("===========================", file=output_log)
+    print("(g) the number of word-tokens in each class (i.e. the number of words in total)", file=output_log)
+    for target_name in bbc.target_names:
+        separate_cat = sklearn.datasets.load_files(container_path='dataset/BBC', categories=target_name,
+                                                   encoding='latin1')
+        separate_cat_data = separate_cat.data
+        separate_cat_vec = CountVectorizer()
+        separate_cat_array = separate_cat_vec.fit_transform(separate_cat_data).toarray()
+        separate_cat_sum = separate_cat_array.sum()
+        print("The number of word-tokens in " + target_name + ":" + str(separate_cat_sum), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(h) the number of word-tokens in the entire corpus", file=output_log)
+    print(cat_sum, file=output_log)
+
+    print("============================", file=output_log)
+    print("(i) the number and percentage of words with a frequency of zero in each class", file=output_log)
+    for target_name in bbc.target_names:
+        separate_cat = sklearn.datasets.load_files(container_path='dataset/BBC', categories=target_name,
+                                                   encoding='latin1')
+        separate_cat_data = separate_cat.data
+        separate_cat_vec = CountVectorizer()
+        separate_cat_vec.fit(separate_cat_data)
+        current_voc_count = len(separate_cat_vec.get_feature_names())
+        count_zero = size_voc - current_voc_count
+        print("the number words with a frequency of zero in class " + target_name + ": " + str(count_zero),
+              file=output_log)
+        print("the percentage of words with a frequency of zero in class " + target_name + ": " + str(
+            count_zero / size_voc), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(j) the number and percentage of words with a frequency of one in the entire corpus", file=output_log)
+    count = 0
+    for value in cat_array.sum(axis=0):
+        if value == 1:
+            count = count + 1
+    print("The number of words with a frequency of 1 in entire corpus: " + str(count), file=output_log)
+    print("The percentage: " + str(count / cat_sum), file=output_log)
+
+    print("===========================", file=output_log)
+    print("(k) your 2 favorite words (that are present in the vocabulary) and their log-prob", file=output_log)
+    count = 0
+    separate_cat_vec = CountVectorizer()
+    separate_cat_vec.fit(x_train)
+    vocabulary = separate_cat_vec.get_feature_names()
+    print("Word 1: machine\n", file=output_log)
+    machineIndex = vocabulary.index('machine')
+    business = nb.feature_log_prob_[0][machineIndex]
+    entertainment = nb.feature_log_prob_[1][machineIndex]
+    politics = nb.feature_log_prob_[2][machineIndex]
+    sport = nb.feature_log_prob_[3][machineIndex]
+    tech = nb.feature_log_prob_[4][machineIndex]
+    machineTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                             columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(machineTable, file=output_log)
+    print("\n", file=output_log)
+    print("Word 2: learn\n", file=output_log)
+    learnIndex = vocabulary.index('learn')
+    business = nb.feature_log_prob_[0][learnIndex]
+    entertainment = nb.feature_log_prob_[1][learnIndex]
+    politics = nb.feature_log_prob_[2][learnIndex]
+    sport = nb.feature_log_prob_[3][learnIndex]
+    tech = nb.feature_log_prob_[4][learnIndex]
+    learnTable = pandas.DataFrame(np.array([[business, entertainment, politics, sport, tech]]),
+                                    columns=['business', 'entertainment', 'politics', 'sport', 'tech'])
+    print(learnTable, file=output_log)
+    print("\n", file=output_log)
 
 
 # Press the green button in the gutter to run the script.
