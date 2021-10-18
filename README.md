@@ -1,3 +1,5 @@
+https://github.com/RaymondW997/Comp-472-Mini-Project
+
 # Comp-472-Mini-Project
     Raymond Wu 40097426
     Ricky Lam 40089502
